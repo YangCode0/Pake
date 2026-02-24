@@ -149,18 +149,16 @@
     };
   }
 
-function autoSelectLeftProduct() {
-  // 只在产品选择页执行
-  if (!document.querySelector(".switch-container")) return;
+  function autoSelectLeftProduct() {
+    // 只在产品选择页执行
+    if (!document.querySelector(".switch-container")) return;
 
-  const leftCard = document.querySelector(
-    '.card[data-url="/mainNew.fuiou"]'
-  );
+    const leftCard = document.querySelector('.card[data-url="/mainNew.fuiou"]');
 
-  if (leftCard) {
-    leftCard.click();
+    if (leftCard) {
+      leftCard.click();
+    }
   }
-}
   /* ================= 主循环 ================= */
   function init() {
     // 登录页
@@ -168,7 +166,7 @@ function autoSelectLeftProduct() {
       autoLogin();
       return;
     }
-  autoSelectLeftProduct();
+    autoSelectLeftProduct();
     // 主系统页
     if (location.href.includes("mainNew.fuiou")) {
       injectFullScreenCSS();
