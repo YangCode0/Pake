@@ -129,6 +129,9 @@ jobs:
           fi
 
           echo "Running: node dist/cli.js ${ARGS[@]}"
+          if [ -f "injected.js" ]; then
+          ARGS+=("--inject" "injected.js")
+          fi
           node dist/cli.js "${ARGS[@]}"
 
       - name: Build App (Windows)
